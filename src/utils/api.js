@@ -59,4 +59,14 @@ export const authApi = {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
     }),
+
+  /**
+   * Log out the current user. Instructs the server to clear the HTTP-only
+   * jwtToken cookie. No body required.
+   * @returns {Promise<{ message: string }>}
+   */
+  logout: () =>
+    request('/auth/logout', {
+      method: 'POST',
+    }),
 };
